@@ -17,7 +17,7 @@ public class Connexion {
     
     static {
         String url = "jdbc:postgresql://localhost:5432/ourboutique";
-        String login = "ourboutiquejdbc";
+        String login = "ourboutique";
         String password = "ourboutique123!";
         
         try {
