@@ -15,6 +15,10 @@ public class ProduitAchete {
     private Achat achat;
     private Produit produit;
     
+    public ProduitAchete(){
+        
+    }
+    
     public ProduitAchete(double remise, Achat achat, Produit produit) {
         this.remise = remise;
         this.achat = achat;
@@ -49,6 +53,14 @@ public class ProduitAchete {
     
     public void setAchat(Achat _achat){
         this.achat = _achat;
+    }
+    
+    public void setAchatId(int id){
+        achat.setId(id);
+    }
+    
+    public void setProduitId(int id){
+        produit.setId(id);
     }
     
     @Override

@@ -4,7 +4,7 @@
  */
 package entité;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
 
 /**
@@ -17,9 +17,20 @@ public class Produit {
     private double prixUnitaire;
     private Date datePeremption;
     private Categorie categorie;
+    
+    public Produit(){
+         
+    }
 
     public Produit(long id, String libelle, double prixUnitaire, Date datePeremption, Categorie categorie) {
         this.id = id;
+        this.libelle = libelle;
+        this.prixUnitaire = prixUnitaire;
+        this.datePeremption = datePeremption;
+        this.categorie = categorie;
+    }
+    
+    public Produit(String libelle, double prixUnitaire, Date datePeremption, Categorie categorie) {
         this.libelle = libelle;
         this.prixUnitaire = prixUnitaire;
         this.datePeremption = datePeremption;

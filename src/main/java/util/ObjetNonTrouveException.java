@@ -8,6 +8,13 @@ package util;
  *
  * @author jakk
  */
-public class ObjetNonTrouveException {
+public class ObjetNonTrouveException extends Exception{
     
+    public ObjetNonTrouveException(){
+        super();
+    }
+    
+    public ObjetNonTrouveException(String message){
+        super(message);
+    }
 }

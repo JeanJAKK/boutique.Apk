@@ -5,6 +5,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -12,4 +14,20 @@ import java.sql.Connection;
  */
 public class Connexion {
     private static Connection connexion;
+    
+    static {
+        String url = "jdbc:postgres://localhost:5432/ourboutique";
+        String login = "ourboutiquejdbc";
+        String password = "ourboutique123!";
+        
+        try {
+            connexion = DriverManager.getConnection(url, login, password);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static Connection getConnexion(){
+        return connexion;
+    }
 }

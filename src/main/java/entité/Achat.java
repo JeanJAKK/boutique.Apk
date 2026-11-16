@@ -4,7 +4,7 @@
  */
 package entité;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,6 +21,7 @@ public class Achat {
    private Client client;
 
     public Achat() {
+        
     }
 
     public Achat(long id, Date dateAchat, double remise) {
@@ -75,6 +76,21 @@ public class Achat {
         return 1.00;
     }
     
+    public void setClientId(long id){
+        this.client.id = id;
+    }
+    
+    public long getClientId(){
+        return client.id;
+    }
+    
+    public void setEmployeId(long id){
+        this.employee.id = id;
+    }
+    
+    public long getEmployeId(){
+        return employee.id;
+    }
     
     @Override
     public boolean equals(Object obj){
