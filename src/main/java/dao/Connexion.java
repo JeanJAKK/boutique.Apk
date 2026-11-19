@@ -5,11 +5,33 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
  * @author jakk
  */
 public class Connexion {
+
     private static Connection connexion;
+
+    static {
+        String url = "jdbc:postgresql://localhost:5432/ourboutique";
+        String login = "ourboutique";
+        String motDePasse = "ourboutique123!";
+
+        try {
+            connexion = DriverManager.getConnection(url, login, motDePasse);
+            //System.out.println("Connexion effectuee avec success");
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+
+        }
+    }
+
+    public static Connection getConnexion() {
+        return connexion;
+    }
 }
